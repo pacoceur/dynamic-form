@@ -1,9 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Element from './components/Element';
-import Input from './components/Element/Input';
 
 function App() {
-  const [elements, setElements] = useState([
+  const [elements] = useState([
     {
       label: "First Name",
       type: "text",
@@ -97,7 +96,7 @@ function App() {
                     <button
                       className="btn btn-dark mt-3"
                       onClick={(event) => {
-                        setSelectedElements(selectedElements.filter(element => element.uid != field.uid));
+                        setSelectedElements(selectedElements.filter(element => element.uid !== field.uid));
                         event.preventDefault();
                       }}
                     >Remove</button>
